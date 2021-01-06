@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<!-- Change from selection list to action list-->
+
+<div style="text-align: center;">
+        <mat-action-list *ngIf="gamesNotEmpty()">
+                <button mat-list-item *ngFor="let game of games" [value]="game" (click)="onPlayGame(game.id)">
+                        <div>
+                        <app-game-card [game]="game"></app-game-card>
+                        </div>
+                </button>
+        </mat-action-list>
+        <button mat-raised-button color="primary" style="margin-top: 5px;" (click)="onNewGame()">New Game</button>
+</div>

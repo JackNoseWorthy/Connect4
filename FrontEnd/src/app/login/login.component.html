@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<body>
+  <div class="center-div">
+    <mat-card class="center-text">
+      <h2>Login</h2>
+      <br/>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username"/>
+          <mat-error *ngIf="loginForm.controls.username.errors">This field is required</mat-error>
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password"/>
+          <mat-error *ngIf="loginForm.controls.password.errors">This field is required</mat-error>
+        </mat-form-field>
+        <br/>
+        <p *ngIf="invalidCredentials" class="error">Invalid username or password</p>
+        <button mat-raised-button color="primary" class="wide login" type="submit" [disabled]="loginForm.invalid">Login</button>
+      </form>
+      <br/>
+      <button mat-button color="accent" class="wide" (click)="onRegister()">Register</button>
+    </mat-card>
+  </div>
+</body>

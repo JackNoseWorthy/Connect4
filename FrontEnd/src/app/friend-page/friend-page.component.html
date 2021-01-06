@@ -1,0 +1,70 @@
+<!-- consider switching to a mat divider -->
+
+<mat-card class="container">
+        <mat-grid-list cols="3" rowHeight="100%">
+            <mat-grid-tile style="text-align: center;">
+                <h1>Friend List</h1>
+                <div style="width: 100%;" class="list">
+                    <h2>Online</h2>
+                    <div *ngFor="let friend of friends" [value]="friend">
+                        <mat-card *ngIf="friend.online" class="friend">
+                            <h3 mat-flat-button class="inline username">{{ friend.username }}</h3>
+                            <div>
+                                <button mat-flat-button style="margin-right: 3px;" (click)="viewProfile(friend.username)">View Profile</button>
+                                <button mat-flat-button color="warn" (click)="removeFriend(friend.username)">Remove</button>
+                            </div>
+                        </mat-card>
+                    </div>
+                    <br/>
+                    <h2>Offline</h2>
+                    <div *ngFor="let friend of friends" [value]="friend" style="text-align: center !important;">
+                        <mat-card *ngIf="!friend.online" class="friend">
+                            <h3 mat-flat-button class="inline username">{{ friend.username }}</h3>
+                            <div>
+                                <button mat-flat-button style="margin-right: 3px;" (click)="viewProfile(friend.username)">View Profile</button>
+                                <button mat-flat-button color="warn" (click)="removeFriend(friend.username)">Remove</button>
+                            </div>
+                        </mat-card>
+                    </div>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile class="middle">
+                <h1>Friend Requests</h1>
+                <div style="width: 100%;" class="list">
+                    <div *ngFor="let friend of friendRequests" [value]="friend" style="text-align: center !important;">
+                        <mat-card class="friend">
+                            <h3 mat-flat-button class="inline username">{{ friend.name }}</h3>
+                            <div>
+                                <button mat-flat-button style="margin-right: 3px;" *ngIf="friend.canView" (click)="viewProfile(friend)">View Profile</button>
+                                <button mat-flat-button color="accent" style="margin-right: 3px;" (click)="acceptRequest(friend)">Accept</button>
+                                <button mat-flat-button color="warn" (click)="rejectRequest(friend)">Reject</button>
+                            </div>
+                        </mat-card>
+                    </div>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <h1>Search Players</h1>
+                <form [formGroup]="searchForm" (ngSubmit)="searchUsers()">
+                    <mat-form-field appearance="fill" class="search">
+                        <mat-label>Search</mat-label>
+                        <input matInput formControlName="searchString"/>
+                    </mat-form-field>
+                    <button mat-raised-button color="accent" class="search-button" [disabled]="searchForm.invalid">Search</button>
+                </form>
+                <div style="width: 100%;" class="search-list">
+                    <div *ngFor="let friend of getSearchedUsers()" [value]="friend" style="text-align: center !important;">
+                        <mat-card class="friend">
+                            <h3 mat-flat-button class="inline username">{{ friend }}</h3>
+                            <div>
+                                <button mat-flat-button style="margin-right: 3px;" (click)="viewProfile(friend)">View Profile</button>
+                                <button mat-flat-button color="accent" style="margin-right: 3px;" (click)="addFriend(friend)">Add Friend</button>
+                            </div>
+                        </mat-card>
+                    </div>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card>
+         
+    

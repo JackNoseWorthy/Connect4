@@ -1,0 +1,52 @@
+<!-- consoder switching to a mat divider -->
+
+<mat-card class="container">
+    <mat-grid-list cols="3" rowHeight="100%">
+        <mat-grid-tile>
+            <div class="privacy">
+                <p style="display: inline-block; padding-right: 20px;">Account Privacy Setting:</p>
+                <button mat-raised-button color="primary" (click)="togglePrivacy()">{{ privacy }}</button>
+            </div>
+            <h1 class="title">Player Statistics</h1>
+            <h2 class="category" style="top: 20%">Games Played:</h2>
+            <h2 class="value" style="top: 20%">{{ gamesPlayed }}</h2>
+
+            <h2 class="category" style="top: 30%">Games Won:</h2>
+            <h2 class="value" style="top: 30%">{{ gamesWon }}</h2>
+
+            <h2 class="category" style="top: 40%">Win Percentage:</h2>
+            <h2 class="value" style="top: 40%">{{ getWinPercentage() }}%</h2>
+
+            <h2 class="category" style="top: 50%">Total Moves Made:</h2>
+            <h2 class="value" style="top: 50%">{{ movesMade }}</h2>
+        </mat-grid-tile>
+        <mat-grid-tile class="middle">
+            <h1 class="username">{{ username }}</h1>
+            <h1 class="title">Current Games</h1>
+            <mat-action-list>
+                    <button mat-list-item *ngFor="let game of games" [value]="game" (click)="onPlayGame(game.id)">
+                            <div>
+                            <app-game-card [game]="game"></app-game-card>
+                            </div>
+                    </button>
+            </mat-action-list>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <h1 class="title">Game History</h1>
+            <mat-action-list>
+                <button mat-list-item *ngFor="let game of lastFive" [value]="lastFive" (click)="onPlayGame(game.id)">
+                        <div>
+                            <mat-icon *ngIf="game.win === username" style="color: green">emoji_events</mat-icon>
+                            <mat-icon *ngIf="game.win === 'Tie'" style="color: white">safety_divider</mat-icon>
+                            <mat-icon *ngIf="game.win !== username && game.win !== 'Tie'" style="color: red">thumb_down</mat-icon>
+                            <span></span>
+                            {{ game.opponent }}
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+            </mat-action-list>
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-card>
+     

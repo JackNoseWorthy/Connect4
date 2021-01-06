@@ -1,0 +1,77 @@
+[
+    {
+        "username": "Jack",
+        "password": "123qwe",
+        "privacy": "Public",
+        "online": false,
+        "stats": {
+            "gamesPlayed": 0,
+            "gamesWon": 0,
+            "totalMoves": 0
+        },
+        "friends": [
+            "Tom",
+            "Mike"
+        ],
+        "friendRequests": [
+            "Rohan"
+        ],
+        "gameHistory": []
+    },
+    {
+        "username": "Tom",
+        "password": "123qwe",
+        "privacy": "Public",
+        "online": false,
+        "stats": {
+            "gamesPlayed": 0,
+            "gamesWon": 0,
+            "totalMoves": 0
+        },
+        "friends": [
+            "Jack",
+            "Mike"
+        ],
+        "friendRequests": [
+            "Rohan"
+        ],
+        "gameHistory": []
+    },
+    {
+        "username": "Mike",
+        "password": "123qwe",
+        "privacy": "Public",
+        "online": false,
+        "stats": {
+            "gamesPlayed": 0,
+            "gamesWon": 0,
+            "totalMoves": 0
+        },
+        "friends": [
+            "Tom",
+            "Jack"
+        ],
+        "friendRequests": [
+            "Rohan"
+        ],
+        "gameHistory": []
+    },
+    {
+        "username": "Rohan",
+        "password": "123qwe",
+        "privacy": "Public",
+        "online": false,
+        "stats": {
+            "gamesPlayed": 0,
+            "gamesWon": 0,
+            "totalMoves": 0
+        },
+        "friends": [
+            
+        ],
+        "friendRequests": [
+
+        ],
+        "gameHistory": []
+    }
+]

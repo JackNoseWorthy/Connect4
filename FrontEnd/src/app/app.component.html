@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<body>
+    <app-login *ngIf="logIn===1" (login)="login($event)" (register)="setCurrentLogin(2)" [invalidCredentials]="invalidCredentials"></app-login>
+    <app-register *ngIf="logIn===2" (register)="register($event)" [usernameTaken]="usernameTaken"></app-register>
+    <div *ngIf="logIn===3">
+        <mat-toolbar color="primary">
+            <button mat-flat-button color="primary" (click)="getGames()">Games</button>
+            <button mat-flat-button color="primary" (click)="viewProfile(thisUser)">Profile</button>
+            <button mat-flat-button color="primary" (click)="getFriends()">Friends</button>
+            <span class="spacer"></span>
+            <button mat-flat-button color="accent" (click)="leave(true)">Logout</button>
+        </mat-toolbar>
+
+        <mat-drawer-container autosize [hasBackdrop]="false">
+            <mat-drawer mode="over" [opened]="sidebar">
+                <span class="drawer-width"></span>
+                <h3 class="center">Games</h3>
+                <app-games-list (newGame)="getOpponents()" (playGame)="getGame($event)" [games]="activeGames"></app-games-list>
+            </mat-drawer>
+            <mat-drawer-content>
+                <app-profile 
+                    *ngIf="currentPage === 1"
+                    [username]="userForProfile.username"
+                    [gamesPlayed]="userForProfile.gamesPlayed"
+                    [gamesWon]="userForProfile.gamesWon"
+                    [movesMade]="userForProfile.totalMoves"
+                    [games]="userForProfile.gamesList"
+                    [lastFive]="userForProfile.gameHistory"
+                    [privacy]="userForProfile.privacy"
+                    (onPrivacy)="updatePrivacy($event)"
+                    (playGame)="getGame($event)"
+                ></app-profile>
+                <app-friend-page 
+                    *ngIf="currentPage === 2"
+                    [friends]="userFriends.friends"
+                    [friendRequests]="userFriends.friendRequests"
+                    [searchedUsers]="searchedUsers"
+                    [username]="thisUser"
+                    (add)="makeFriendRequest($event)"
+                    (accept)="acceptFriendRequest($event)"
+                    (remove)="removeFriend($event)"
+                    (reject)="rejectFriendRequest($event)"
+                    (search)="searchUsers($event)"
+                    (profile)="viewProfile($event)"
+                ></app-friend-page>
+                <app-game-board 
+                    *ngIf="currentPage === 3"
+                    [board]="openGame.board"
+                    [username]="thisUser"
+                    [turn]="openGame.turn"
+                    [chats]="openGame.chats"
+                    [id]="openGame.id"
+                    [player1]="openGame.players.player1"
+                    [player2]="openGame.players.player2"
+                    [moveOrder]="openGame.moveOrder"
+                    [moveOrderIndex]="openGame.moveOrder.length - 1"
+                    [viewers]="openGame.currViewers"
+                    (move)="move($event)"
+                    (forfeit)="forfeit($event)"
+                    (message)="sendMessage($event)"
+                ></app-game-board>
+            </mat-drawer-content>
+        </mat-drawer-container>
+    </div>
+</body>
+

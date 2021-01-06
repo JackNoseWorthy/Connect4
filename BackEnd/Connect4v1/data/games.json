@@ -1,0 +1,48 @@
+[
+    {
+        "id": 0,
+        "board": [[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]],
+        "moveOrder": [],
+        "players": {
+            "player1": "Jack",
+            "player2": "Tom"
+        },
+        "turn": "Tom",
+        "winner": null,
+        "forfeit": false,
+        "chats": [
+            {
+                "player": "Jack",
+                "message": "Hello"
+            },
+            {
+                "player": "Tom",
+                "message": "Sup dude"
+            }
+        ],
+        "privacy": 3
+    },
+    {
+        "id": 1,
+        "board": [[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]],
+        "moveOrder": [],
+        "players": {
+            "player1": "Jack",
+            "player2": "Mike"
+        },
+        "turn": "Jack",
+        "winner": null,
+        "forfeit": false,
+        "chats": [
+            {
+                "player": "Jack",
+                "message": "Hello"
+            },
+            {
+                "player": "Mike",
+                "message": "Sup dude"
+            }
+        ],
+        "privacy": 3
+    }
+]

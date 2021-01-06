@@ -1,0 +1,22 @@
+
+<h1 mat-dialog-title>New Game</h1>
+<form [formGroup]="newGameForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+        <mat-label>Opponent</mat-label>
+        <mat-select formControlName="opponent">
+            <!--mat-option value="Random Opponent">Random Opponent</mat-option-->
+            <mat-option *ngFor="let friend of data.friends" [value]="friend">{{ friend }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="newGameForm.controls.opponent.errors">Field is Required</mat-error>
+    </mat-form-field>
+    <br/>
+    <mat-radio-group formControlName="privacy">
+        <mat-radio-button value="1">Public</mat-radio-button>
+        <mat-radio-button value="2">Friends Only</mat-radio-button>
+        <mat-radio-button value="3">Private</mat-radio-button>
+    </mat-radio-group>
+    <div style="text-align: center;">
+        <button mat-flat-button color="primary" type="submit" style="margin-left: 10px;" [disabled]="newGameForm.invalid">Create Game</button>
+        <button mat-button color="warn" mat-dialog-close style="margin-left: 10px;">Cancel</button>
+    </div>
+</form>

@@ -1,0 +1,147 @@
+[
+  {
+    "username": "Jack",
+    "password": "123qwe",
+    "privacy": "Private",
+    "online": true,
+    "stats": {
+      "gamesPlayed": 13,
+      "gamesWon": 5,
+      "totalMoves": 204
+    },
+    "friends": [
+      "Mike",
+      "Tom",
+      "Bilal"
+    ],
+    "friendRequests": [],
+    "gameHistory": [
+      20,
+      19,
+      18,
+      17,
+      16,
+      15,
+      0,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  {
+    "username": "Tom",
+    "password": "123qwe",
+    "privacy": "Public",
+    "online": false,
+    "stats": {
+      "gamesPlayed": 4,
+      "gamesWon": 0,
+      "totalMoves": 51
+    },
+    "friends": [
+      "Mike",
+      "Jack"
+    ],
+    "friendRequests": [
+      "Bilal"
+    ],
+    "gameHistory": [
+      20,
+      19,
+      18,
+      0
+    ]
+  },
+  {
+    "username": "Mike",
+    "password": "123qwe",
+    "privacy": "Public",
+    "online": true,
+    "stats": {
+      "gamesPlayed": 4,
+      "gamesWon": 2,
+      "totalMoves": 148
+    },
+    "friends": [
+      "Tom",
+      "Jack"
+    ],
+    "friendRequests": [
+      "Rohan",
+      "Bilal"
+    ],
+    "gameHistory": [
+      17,
+      7,
+      8,
+      9
+    ]
+  },
+  {
+    "username": "Rohan",
+    "password": "123qwe",
+    "privacy": "Public",
+    "online": true,
+    "stats": {
+      "gamesPlayed": 0,
+      "gamesWon": 0,
+      "totalMoves": 0
+    },
+    "friends": [],
+    "friendRequests": [
+      "Jack"
+    ],
+    "gameHistory": []
+  },
+  {
+    "username": "Bilal",
+    "password": "123qweqwe",
+    "privacy": "Public",
+    "online": false,
+    "stats": {
+      "gamesPlayed": 0,
+      "gamesWon": 0,
+      "totalMoves": 0
+    },
+    "friends": [
+      "Jack"
+    ],
+    "friendRequests": [],
+    "gameHistory": []
+  },
+  {
+    "username": "del",
+    "password": "123qweqwe",
+    "privacy": "Public",
+    "online": true,
+    "stats": {
+      "gamesPlayed": 0,
+      "gamesWon": 0,
+      "totalMoves": 0
+    },
+    "friends": [],
+    "friendRequests": [
+      "delete"
+    ],
+    "gameHistory": []
+  },
+  {
+    "username": "delete",
+    "password": "123qweqwe",
+    "privacy": "Public",
+    "online": true,
+    "stats": {
+      "gamesPlayed": 0,
+      "gamesWon": 0,
+      "totalMoves": 0
+    },
+    "friends": [],
+    "friendRequests": [
+      "del"
+    ],
+    "gameHistory": []
+  }
+]

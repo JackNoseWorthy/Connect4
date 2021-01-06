@@ -1,0 +1,25 @@
+mat-drawer-content{
+    background-color: white;
+}
+
+mat-drawer-container{
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    top: 64px;
+}
+
+.spacer{
+    flex: 1 1 auto;
+}
+
+.center{
+    text-align: center;
+}
+
+.drawer-width{
+    height: 0px;
+    width: 200px;
+    display: inline-block;
+}
